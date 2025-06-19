@@ -4,6 +4,10 @@ import os
 from aiogram import Bot, Dispatcher, F
 from aiogram.filters import Command
 from handlers import bot_handler
+from dotenv import load_dotenv
+
+
+load_dotenv()
 
 bot = Bot(token=os.getenv("BOT_TOKEN"))
 
@@ -27,7 +31,7 @@ async def register_handlers(dp: Dispatcher):
 
 async def main():
     # Регистрация обработчиков
-    register_handlers(dp)
+    await register_handlers(dp)
 
     # Установка функций запуска/остановки
     dp.startup.register(on_startup)
@@ -35,6 +39,7 @@ async def main():
 
     logger.info("Запуск бота...")
     await dp.start_polling(bot)
+
 
 
 if __name__ == '__main__':
