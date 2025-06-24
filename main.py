@@ -19,6 +19,10 @@ logger = logging.getLogger(__name__)
 
 async def register_handlers(dp: Dispatcher):
     dp.message.register(bot_handler.start, Command('start'))
+    dp.message.register(bot_handler.menu, Command('menu'))
+
+    # callbacks
+    dp.callback_query.register(bot_handler.menu, F.data == 'menu')
 
 
 async def main():
