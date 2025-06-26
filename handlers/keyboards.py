@@ -13,7 +13,7 @@ def create_kb(buttons: list[tuple[str, str]]) -> InlineKeyboardMarkup:
 
 # Главное меню
 def start_kb():
-    return create_kb([('🚀Начать', 'menu')])
+    return create_kb([('🚀Начать', 'main_menu')])
 
 def get_schedule():
     return create_kb([
