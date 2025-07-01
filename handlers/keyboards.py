@@ -18,6 +18,18 @@ def start_kb():
 def get_schedule():
     return create_kb([
         ("📅Расписание", "schedule"),
-        ("Не Расписание", "no_schedule")
+        ("📈Тарифы", "fee")
     ])
 
+def get_fee():
+    return create_kb([
+        ("🟢 Базовый", "basic"),
+        ("📘 Стандарт", "standart"),
+        ("🌟 Премиум", "premium"),
+        ("⚡ Оплата за каждое занятие", "pay_as_you_go"),
+    ])
+
+def get_promotion():
+    return create_kb([
+        ("🚀 Акции и Скидки", "promotions")
+    ])
